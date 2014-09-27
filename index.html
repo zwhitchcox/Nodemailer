@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Nodemailer by andris9</title>
+    <meta name="description" content="Nodemailer : Send e-mails from Node.js – easy as cake!">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Nodemailer</title>
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
 
-        <header>
-          <h1>Nodemailer</h1>
-          <h2>Send e-mails from Node.js – easy as cake!</h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/andris9/Nodemailer">View on GitHub</a>
+
+          <h1 id="project_title">Nodemailer</h1>
+          <h2 id="project_tagline">Send e-mails from Node.js – easy as cake!</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/andris9/Nodemailer/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/andris9/Nodemailer/tarball/master">Download this project as a tar.gz file</a>
+            </section>
         </header>
+    </div>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/andris9/Nodemailer/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/andris9/Nodemailer/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/andris9/Nodemailer" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <p><img src="https://raw2.github.com/andris9/Nodemailer/master/assets/nm_logo_200x136.png" alt="Nodemailer"></p>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><img src="https://raw2.github.com/andris9/Nodemailer/master/assets/nm_logo_200x136.png" alt="Nodemailer"></p>
 
 <p>Send e-mails from Node.js – easy as cake!</p>
 
@@ -730,7 +730,7 @@ transporter.sendMail({mail data});
 
 <p>Additionally Gmail has came up with the concept of <a href="https://support.google.com/accounts/answer/6010255?hl=en">'less secure'</a> apps which is basically anyone who uses plain password to login to Gmail, so you might end up in a situation where one username can send (support for 'less secure' apps is enabled) but other is blocked (support for 'less secure' apps is disabled).</p>
 
-<p>To prevent having login issues you should either use XOAUTH2 (see details <a href="https://github.com/andris9/nodemailer-smtp-transport#authentication">here</a>) or use another provider and preferably a dedicated one like <a href="http://www.mailgun.com/">Mailgun</a> or <a href="http://www.sendgrid.com/">SendGrid</a> or any other. Usually these providers have free plans available that are compareable to the daily sending limits of Gmail. Gmail has a limit of 500 recipients a day (a message with one <em>To</em> and one <em>Cc</em> address counts as two messages since it has two recipients) for @gmail.com addresses and 2000 for Google Apps customers, larger SMTP providers usually offer about 200-300 recipients a day for free.</p>
+<p>To prevent having login issues you should either use XOAUTH2 (see details <a href="https://github.com/andris9/nodemailer-smtp-transport#authentication">here</a>) or use another provider and preferably a dedicated one like <a href="http://www.mailgun.com/">Mailgun</a> or <a href="http://mbsy.co/sendgrid/12237825">SendGrid</a> or any other. Usually these providers have free plans available that are compareable to the daily sending limits of Gmail. Gmail has a limit of 500 recipients a day (a message with one <em>To</em> and one <em>Cc</em> address counts as two messages since it has two recipients) for @gmail.com addresses and 2000 for Google Apps customers, larger SMTP providers usually offer about 200-300 recipients a day for free.</p>
 
 <h2>
 <a name="delivering-bulk-mail" class="anchor" href="#delivering-bulk-mail"><span class="octicon octicon-link"></span></a>Delivering Bulk Mail</h2>
@@ -739,7 +739,7 @@ transporter.sendMail({mail data});
 
 <ol>
 <li>
-<strong>Use a dedicated SMTP provider.</strong> Do not use services that offer SMTP as a sideline or for free (thats Gmail or the SMTP of your homepage hosting company) to send bulk mail – you'll hit all the hard limits immediatelly or get labelled as spam. Basically you get what you pay for and if you pay zero then your deliverability is near zero as well. E-mail might seem free but it is only free to a certain amount and that amount certainly does not include 10 million e-mails in a short period of time.</li>
+<strong>Use a dedicated SMTP provider</strong> like <a href="http://mbsy.co/sendgrid/12237825">SendGrid</a> or <a href="http://www.mailgun.com/">Mailgun</a> or any other. Do not use services that offer SMTP as a sideline or for free (thats Gmail or the SMTP of your homepage hosting company) to send bulk mail – you'll hit all the hard limits immediatelly or get labelled as spam. Basically you get what you pay for and if you pay zero then your deliverability is near zero as well. E-mail might seem free but it is only free to a certain amount and that amount certainly does not include 10 million e-mails in a short period of time.</li>
 <li>
 <strong>Use a dedicated queue manager,</strong> for example <a href="http://www.rabbitmq.com/">RabbitMQ</a> for queueing the e-mails. Nodemailer creates a callback function with related scopes etc. for every message so it might be hard on memory if you pile up the data for 10 million messages at once. Better to take the data from a queue when there's a free spot in the connection pool (previously sent message returns its callback).</li>
 <li>
@@ -757,14 +757,18 @@ transporter.sendMail({mail data});
 <p><strong>Nodemailer</strong> is licensed under <a href="https://github.com/andris9/Nodemailer/blob/master/LICENSE">MIT license</a>. Basically you can do whatever you want to with it</p>
 
 <hr><p>The Nodemailer logo was designed by <a href="https://www.behance.net/kristjansen">Sven Kristjansen</a>.</p>
-        </section>
+      </section>
+    </div>
 
-        <footer>
-          Nodemailer is maintained by <a href="https://github.com/andris9">andris9</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Nodemailer maintained by <a href="https://github.com/andris9">andris9</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
 
-                  <script type="text/javascript">
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -775,7 +779,6 @@ transporter.sendMail({mail data});
             } catch(err) {}
           </script>
 
-      </div>
-    </div>
+
   </body>
 </html>

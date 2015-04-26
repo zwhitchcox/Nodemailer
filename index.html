@@ -1,49 +1,30 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Nodemailer by andris9</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Nodemailer</h1>
+      <h2 class="project-tagline">Send e-mails from Node.js – easy as cake!</h2>
+      <a href="https://github.com/andris9/Nodemailer" class="btn">View on GitHub</a>
+      <a href="https://github.com/andris9/Nodemailer/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/andris9/Nodemailer/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-      <header>
-        <h1>Nodemailer</h1>
-        <p>Send e-mails from Node.js – easy as cake!</p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/andris9/Nodemailer" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/andris9/Nodemailer/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/andris9/Nodemailer/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <p><img src="https://raw.githubusercontent.com/andris9/Nodemailer/master/assets/nm_logo_200x136.png" alt="Nodemailer"></p>
+    <section class="main-content">
+      <p><img src="https://raw.githubusercontent.com/andris9/Nodemailer/master/assets/nm_logo_200x136.png" alt="Nodemailer"></p>
 
 <p>Send e-mails from Node.js – easy as cake!</p>
 
-<p><a href="http://travis-ci.org/andris9/Nodemailer"><img src="https://secure.travis-ci.org/andris9/Nodemailer.svg" alt="Build Status"></a>
+<p><a href="https://gitter.im/andris9/Nodemailer?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a>
+<a href="http://travis-ci.org/andris9/Nodemailer"><img src="https://secure.travis-ci.org/andris9/Nodemailer.svg" alt="Build Status"></a>
 <a href="http://badge.fury.io/js/nodemailer"><img src="https://badge.fury.io/js/nodemailer.svg" alt="NPM version" height="18"></a></p>
 
 <h2>
@@ -92,35 +73,35 @@
 
 <p>This is a complete example to send an e-mail with plaintext and HTML body</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> nodemailer <span class="pl-ko">=</span> <span class="pl-sf">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
 
-<span class="pl-c"><span class="pl-pdc">//</span> create reusable transporter object using SMTP transport</span>
-<span class="pl-s">var</span> transporter <span class="pl-ko">=</span> nodemailer.createTransport({
-    service<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>Gmail<span class="pl-pds">'</span></span>,
-    auth<span class="pl-ko">:</span> {
-        user<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>gmail.user@gmail.com<span class="pl-pds">'</span></span>,
-        pass<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>userpass<span class="pl-pds">'</span></span>
+<span class="pl-c">// create reusable transporter object using SMTP transport</span>
+<span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport({
+    service<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Gmail<span class="pl-pds">'</span></span>,
+    auth<span class="pl-k">:</span> {
+        user<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>gmail.user@gmail.com<span class="pl-pds">'</span></span>,
+        pass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>userpass<span class="pl-pds">'</span></span>
     }
 });
 
-<span class="pl-c"><span class="pl-pdc">//</span> NB! No need to recreate the transporter object. You can use</span>
-<span class="pl-c"><span class="pl-pdc">//</span> the same transporter object for all e-mails</span>
+<span class="pl-c">// NB! No need to recreate the transporter object. You can use</span>
+<span class="pl-c">// the same transporter object for all e-mails</span>
 
-<span class="pl-c"><span class="pl-pdc">//</span> setup e-mail data with unicode symbols</span>
-<span class="pl-s">var</span> mailOptions <span class="pl-ko">=</span> {
-    from<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>Fred Foo ✔ &lt;foo@blurdybloop.com&gt;<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-pdc">//</span> sender address</span>
-    to<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>bar@blurdybloop.com, baz@blurdybloop.com<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-pdc">//</span> list of receivers</span>
-    subject<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>Hello ✔<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-pdc">//</span> Subject line</span>
-    text<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>Hello world ✔<span class="pl-pds">'</span></span>, <span class="pl-c"><span class="pl-pdc">//</span> plaintext body</span>
-    html<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>&lt;b&gt;Hello world ✔&lt;/b&gt;<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-pdc">//</span> html body</span>
+<span class="pl-c">// setup e-mail data with unicode symbols</span>
+<span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
+    from<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Fred Foo ✔ &lt;foo@blurdybloop.com&gt;<span class="pl-pds">'</span></span>, <span class="pl-c">// sender address</span>
+    to<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>bar@blurdybloop.com, baz@blurdybloop.com<span class="pl-pds">'</span></span>, <span class="pl-c">// list of receivers</span>
+    subject<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Hello ✔<span class="pl-pds">'</span></span>, <span class="pl-c">// Subject line</span>
+    text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Hello world ✔<span class="pl-pds">'</span></span>, <span class="pl-c">// plaintext body</span>
+    html<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;b&gt;Hello world ✔&lt;/b&gt;<span class="pl-pds">'</span></span> <span class="pl-c">// html body</span>
 };
 
-<span class="pl-c"><span class="pl-pdc">//</span> send mail with defined transport object</span>
-transporter.sendMail(mailOptions, <span class="pl-s">function</span>(<span class="pl-vpf">error</span>, <span class="pl-vpf">info</span>){
+<span class="pl-c">// send mail with defined transport object</span>
+transporter.sendMail(mailOptions, <span class="pl-k">function</span>(<span class="pl-smi">error</span>, <span class="pl-smi">info</span>){
     <span class="pl-k">if</span>(error){
-        console<span class="pl-sf">.log</span>(error);
+        <span class="pl-en">console</span><span class="pl-c1">.log</span>(error);
     }<span class="pl-k">else</span>{
-        console<span class="pl-sf">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>Message sent: <span class="pl-pds">'</span></span> <span class="pl-ko">+</span> info.response);
+        <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Message sent: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> info.response);
     }
 });</pre></div>
 
@@ -129,21 +110,6 @@ transporter.sendMail(mailOptions, <span class="pl-s">function</span>(<span class
 <blockquote>
 <p>When using default SMTP transport, then you do not need to define transport type explicitly (even though you can), just provide the SMTP options and that's it. For anything else, see the docs of the particular <a href="#available-transports">transport mechanism</a>.</p>
 </blockquote>
-
-<h2>
-<a id="goals-for-10" class="anchor" href="#goals-for-10" aria-hidden="true"><span class="octicon octicon-link"></span></a>Goals for 1.0</h2>
-
-<h3>
-<a id="1-move-optional-features-out-of-core" class="anchor" href="#1-move-optional-features-out-of-core" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Move optional features out of core</h3>
-
-<p>Nodemailer 0.x is quite large and includes a ton of stuff that is not needed for most users. Sometimes it causes problems, for example when
-a feature that you do not even use requires some dependency to be installed that throws in your environment. If you only use SMTP to send e-mails you do not need the SES code and vice versa. The goal is achieved with a plugin system where you can install and load only these plugins that you actually require.</p>
-
-<h3>
-<a id="2-gigabyte-attachments" class="anchor" href="#2-gigabyte-attachments" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Gigabyte attachments</h3>
-
-<p>Version 1.0 is a total rewrite from the ground up and relying heavily on Streams2. This allows you to reliably
-send messages with gigabyte attachments even through a slow network connection without CPU or memory penalties. You probably never need it but it makes using smaller attachments more reliable as well.</p>
 
 <h2>
 <a id="setting-up" class="anchor" href="#setting-up" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setting up</h2>
@@ -155,7 +121,7 @@ send messages with gigabyte attachments even through a slow network connection w
 
 <p>To send e-mails you need a transporter object</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> transporter <span class="pl-ko">=</span> nodemailer.createTransport(transport)</pre></div>
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport(transport)</pre></div>
 
 <p>Where</p>
 
@@ -178,13 +144,13 @@ send messages with gigabyte attachments even through a slow network connection w
 
 <p>In this case all e-mails are sent directly to the recipients MX server (using port 25)</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> nodemailer <span class="pl-ko">=</span> <span class="pl-sf">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
-<span class="pl-s">var</span> transporter <span class="pl-ko">=</span> nodemailer.createTransport();
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport();
 transporter.sendMail({
-    from<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>sender@address<span class="pl-pds">'</span></span>,
-    to<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>receiver@address<span class="pl-pds">'</span></span>,
-    subject<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>hello<span class="pl-pds">'</span></span>,
-    text<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>
+    from<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>sender@address<span class="pl-pds">'</span></span>,
+    to<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>receiver@address<span class="pl-pds">'</span></span>,
+    subject<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hello<span class="pl-pds">'</span></span>,
+    text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>
 });</pre></div>
 
 <blockquote>
@@ -196,19 +162,19 @@ transporter.sendMail({
 
 <p>See SMTP <a href="https://github.com/andris9/nodemailer-smtp-transport#usage">configuration options here</a></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> nodemailer <span class="pl-ko">=</span> <span class="pl-sf">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
-<span class="pl-s">var</span> transporter <span class="pl-ko">=</span> nodemailer.createTransport({
-    service<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>gmail<span class="pl-pds">'</span></span>,
-    auth<span class="pl-ko">:</span> {
-        user<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>sender@gmail.com<span class="pl-pds">'</span></span>,
-        pass<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>password<span class="pl-pds">'</span></span>
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport({
+    service<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>gmail<span class="pl-pds">'</span></span>,
+    auth<span class="pl-k">:</span> {
+        user<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>sender@gmail.com<span class="pl-pds">'</span></span>,
+        pass<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>password<span class="pl-pds">'</span></span>
     }
 });
 transporter.sendMail({
-    from<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>sender@address<span class="pl-pds">'</span></span>,
-    to<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>receiver@address<span class="pl-pds">'</span></span>,
-    subject<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>hello<span class="pl-pds">'</span></span>,
-    text<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>
+    from<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>sender@address<span class="pl-pds">'</span></span>,
+    to<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>receiver@address<span class="pl-pds">'</span></span>,
+    subject<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hello<span class="pl-pds">'</span></span>,
+    text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>
 });</pre></div>
 
 <blockquote>
@@ -224,17 +190,17 @@ transporter.sendMail({
 
 <p>The following example uses <a href="https://github.com/andris9/nodemailer-ses-transport">nodemailer-ses-transport</a> (Amazon SES).</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> nodemailer <span class="pl-ko">=</span> <span class="pl-sf">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
-<span class="pl-s">var</span> ses <span class="pl-ko">=</span> <span class="pl-sf">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>nodemailer-ses-transport<span class="pl-pds">'</span></span>);
-<span class="pl-s">var</span> transporter <span class="pl-ko">=</span> nodemailer.createTransport(ses({
-    accessKeyId<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>AWSACCESSKEY<span class="pl-pds">'</span></span>,
-    secretAccessKey<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>AWS/Secret/key<span class="pl-pds">'</span></span>
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> ses <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer-ses-transport<span class="pl-pds">'</span></span>);
+<span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport(ses({
+    accessKeyId<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>AWSACCESSKEY<span class="pl-pds">'</span></span>,
+    secretAccessKey<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>AWS/Secret/key<span class="pl-pds">'</span></span>
 }));
 transporter.sendMail({
-    from<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>sender@address<span class="pl-pds">'</span></span>,
-    to<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>receiver@address<span class="pl-pds">'</span></span>,
-    subject<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>hello<span class="pl-pds">'</span></span>,
-    text<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>
+    from<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>sender@address<span class="pl-pds">'</span></span>,
+    to<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>receiver@address<span class="pl-pds">'</span></span>,
+    subject<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hello<span class="pl-pds">'</span></span>,
+    text<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>
 });</pre></div>
 
 <h2>
@@ -280,6 +246,8 @@ transporter.sendMail({
 <strong><a href="https://github.com/andris9/nodemailer-html-to-text">nodemailer-html-to-text</a></strong> to auto generate plaintext content from html</li>
 <li>
 <strong><a href="https://github.com/yads/nodemailer-express-handlebars">nodemailer-express-handlebars</a></strong> to auto generate html emails from handelbars/mustache templates</li>
+<li>
+<strong><a href="https://github.com/mixmaxhq/nodemailer-plugin-inline-base64">nodemailer-plugin-inline-base64</a></strong> to convert base64 images to attachments</li>
 <li>
 <em>add yours</em> (see plugin api documentation <a href="#plugin-api">here</a>)</li>
 </ul>
@@ -371,7 +339,7 @@ transporter.sendMail({
 <li>
 <strong>date</strong> - optional Date value, current UTC string will be used if not set</li>
 <li>
-<strong>encoding</strong> - optional transfer encoding for the textual parts (defaults to 'quoted-printable')</li>
+<strong>encoding</strong> - optional transfer encoding for the textual parts</li>
 </ul>
 
 <p>All text fields (e-mail addresses, plaintext body, html body) use UTF-8 as the encoding.
@@ -401,44 +369,44 @@ Attachments are streamed as binary.</p>
 
 <p>Attachments can be added as many as you want.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> mailOptions <span class="pl-ko">=</span> {
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
     ...
-    attachments<span class="pl-ko">:</span> [
-        {   <span class="pl-c"><span class="pl-pdc">//</span> utf-8 string as an attachment</span>
-            filename<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>text1.txt<span class="pl-pds">'</span></span>,
-            content<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>
+    attachments<span class="pl-k">:</span> [
+        {   <span class="pl-c">// utf-8 string as an attachment</span>
+            filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>text1.txt<span class="pl-pds">'</span></span>,
+            content<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>
         },
-        {   <span class="pl-c"><span class="pl-pdc">//</span> binary buffer as an attachment</span>
-            filename<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>text2.txt<span class="pl-pds">'</span></span>,
-            content<span class="pl-ko">:</span> <span class="pl-ko">new</span> <span class="pl-enti">Buffer</span>(<span class="pl-s1"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>,<span class="pl-s1"><span class="pl-pds">'</span>utf-8<span class="pl-pds">'</span></span>)
+        {   <span class="pl-c">// binary buffer as an attachment</span>
+            filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>text2.txt<span class="pl-pds">'</span></span>,
+            content<span class="pl-k">:</span> <span class="pl-k">new</span> <span class="pl-en">Buffer</span>(<span class="pl-s"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>utf-8<span class="pl-pds">'</span></span>)
         },
-        {   <span class="pl-c"><span class="pl-pdc">//</span> file on disk as an attachment</span>
-            filename<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>text3.txt<span class="pl-pds">'</span></span>,
-            path<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>/path/to/file.txt<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-pdc">//</span> stream this file</span>
+        {   <span class="pl-c">// file on disk as an attachment</span>
+            filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>text3.txt<span class="pl-pds">'</span></span>,
+            path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/file.txt<span class="pl-pds">'</span></span> <span class="pl-c">// stream this file</span>
         },
-        {   <span class="pl-c"><span class="pl-pdc">//</span> filename and content type is derived from path</span>
-            path<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>/path/to/file.txt<span class="pl-pds">'</span></span>
+        {   <span class="pl-c">// filename and content type is derived from path</span>
+            path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/file.txt<span class="pl-pds">'</span></span>
         },
-        {   <span class="pl-c"><span class="pl-pdc">//</span> stream as an attachment</span>
-            filename<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>text4.txt<span class="pl-pds">'</span></span>,
-            content<span class="pl-ko">:</span> fs.createReadStream(<span class="pl-s1"><span class="pl-pds">'</span>file.txt<span class="pl-pds">'</span></span>)
+        {   <span class="pl-c">// stream as an attachment</span>
+            filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>text4.txt<span class="pl-pds">'</span></span>,
+            content<span class="pl-k">:</span> fs.createReadStream(<span class="pl-s"><span class="pl-pds">'</span>file.txt<span class="pl-pds">'</span></span>)
         },
-        {   <span class="pl-c"><span class="pl-pdc">//</span> define custom content type for the attachment</span>
-            filename<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>text.bin<span class="pl-pds">'</span></span>,
-            content<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>,
-            contentType<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>text/plain<span class="pl-pds">'</span></span>
+        {   <span class="pl-c">// define custom content type for the attachment</span>
+            filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>text.bin<span class="pl-pds">'</span></span>,
+            content<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>hello world!<span class="pl-pds">'</span></span>,
+            contentType<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>text/plain<span class="pl-pds">'</span></span>
         },
-        {   <span class="pl-c"><span class="pl-pdc">//</span> use URL as an attachment</span>
-            filename<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>license.txt<span class="pl-pds">'</span></span>,
-            path<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>https://raw.github.com/andris9/Nodemailer/master/LICENSE<span class="pl-pds">'</span></span>
+        {   <span class="pl-c">// use URL as an attachment</span>
+            filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>license.txt<span class="pl-pds">'</span></span>,
+            path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>https://raw.github.com/andris9/Nodemailer/master/LICENSE<span class="pl-pds">'</span></span>
         },
-        {   <span class="pl-c"><span class="pl-pdc">//</span> encoded string as an attachment</span>
-            filename<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>text1.txt<span class="pl-pds">'</span></span>,
-            content<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>aGVsbG8gd29ybGQh<span class="pl-pds">'</span></span>,
-            encoding<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>base64<span class="pl-pds">'</span></span>
+        {   <span class="pl-c">// encoded string as an attachment</span>
+            filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>text1.txt<span class="pl-pds">'</span></span>,
+            content<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>aGVsbG8gd29ybGQh<span class="pl-pds">'</span></span>,
+            encoding<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>base64<span class="pl-pds">'</span></span>
         },
-        {   <span class="pl-c"><span class="pl-pdc">//</span> data uri as an attachment</span>
-            path<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>data:text/plain;base64,aGVsbG8gd29ybGQ=<span class="pl-pds">'</span></span>
+        {   <span class="pl-c">// data uri as an attachment</span>
+            path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>data:text/plain;base64,aGVsbG8gd29ybGQ=<span class="pl-pds">'</span></span>
         }
     ]
 }</pre></div>
@@ -452,13 +420,13 @@ Attachments are streamed as binary.</p>
 
 <p><strong>Usage example:</strong></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> mailOptions <span class="pl-ko">=</span> {
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
     ...
-    html<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>&lt;b&gt;Hello world!&lt;/b&gt;<span class="pl-pds">'</span></span>,
-    alternatives<span class="pl-ko">:</span> [
+    html<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;b&gt;Hello world!&lt;/b&gt;<span class="pl-pds">'</span></span>,
+    alternatives<span class="pl-k">:</span> [
         {
-            contentType<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>text/x-web-markdown<span class="pl-pds">'</span></span>,
-            content<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>**Hello world!**<span class="pl-pds">'</span></span>
+            contentType<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>text/x-web-markdown<span class="pl-pds">'</span></span>,
+            content<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>**Hello world!**<span class="pl-pds">'</span></span>
         }
     ]
 }</pre></div>
@@ -478,21 +446,26 @@ Attachments are streamed as binary.</p>
 <pre><code>"Ноде Майлер" &lt;foobar@blurdybloop.com&gt;
 </code></pre>
 
-<p>or as an address object</p>
+<blockquote>
+<p>Notice that all address fields (even <code>from</code>) are comma separated lists, so if you want to use a comma in the name part, make sure you enclose the name in double quotes: <code>"Майлер, Ноде" &lt;foobar@blurdybloop.com&gt;</code></p>
+</blockquote>
+
+<p>or as an address object (in this case you do not need to worry about the formatting, no need to use quotes etc.)</p>
 
 <pre><code>{
-    name: 'Ноде Майлер',
+    name: 'Майлер, Ноде',
     address: 'foobar@blurdybloop.com'
 }
 </code></pre>
 
-<p>To, Cc and Bcc fields accept comma separated list of e-mails or an array of
-e-mails or an array of comma separated list of e-mails - use it as you like.
+<p>All address fields accept comma separated list of e-mails or an array of
+e-mails or an array of comma separated list of e-mails or address objects - use it as you like.
 Formatting can be mixed.</p>
 
 <pre><code>...,
 to: 'foobar@blurdybloop.com, "Ноде Майлер" &lt;bar@blurdybloop.com&gt;, "Name, User" &lt;baz@blurdybloop.com&gt;',
-cc: ['foobar@blurdybloop.com', '"Ноде Майлер" &lt;bar@blurdybloop.com&gt;, "Name, User" &lt;baz@blurdybloop.com&gt;']
+cc: ['foobar@blurdybloop.com', '"Ноде Майлер" &lt;bar@blurdybloop.com&gt;, "Name, User" &lt;baz@blurdybloop.com&gt;'],
+bcc: ['foobar@blurdybloop.com', {name: 'Майлер, Ноде', address: 'foobar@blurdybloop.com'}]
 ...
 </code></pre>
 
@@ -510,13 +483,13 @@ if for some reason you want to specify it yourself, you can do it with <code>env
 <p><code>envelope</code> is an object with the following params: <code>from</code>, <code>to</code>, <code>cc</code> and <code>bcc</code> just like
 with regular mail options. You can also use the regular address format, unicode domains etc.</p>
 
-<div class="highlight highlight-javascript"><pre>mailOptions <span class="pl-ko">=</span> {
+<div class="highlight highlight-javascript"><pre>mailOptions <span class="pl-k">=</span> {
     ...,
-    from<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>mailer@kreata.ee<span class="pl-pds">'</span></span>,
-    to<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>daemon@kreata.ee<span class="pl-pds">'</span></span>,
-    envelope<span class="pl-ko">:</span> {
-        from<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>Daemon &lt;deamon@kreata.ee&gt;<span class="pl-pds">'</span></span>,
-        to<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>mailer@kreata.ee, Mailer &lt;mailer2@kreata.ee&gt;<span class="pl-pds">'</span></span>
+    from<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>mailer@kreata.ee<span class="pl-pds">'</span></span>,
+    to<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>daemon@kreata.ee<span class="pl-pds">'</span></span>,
+    envelope<span class="pl-k">:</span> {
+        from<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Daemon &lt;deamon@kreata.ee&gt;<span class="pl-pds">'</span></span>,
+        to<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>mailer@kreata.ee, Mailer &lt;mailer2@kreata.ee&gt;<span class="pl-pds">'</span></span>
     }
 }</pre></div>
 
@@ -531,13 +504,13 @@ with regular mail options. You can also use the regular address format, unicode 
 
 <p><strong>NB!</strong> the cid value should be as unique as possible!</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> mailOptions <span class="pl-ko">=</span> {
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
     ...
-    html<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>Embedded image: &lt;img src="cid:unique@kreata.ee"/&gt;<span class="pl-pds">'</span></span>,
-    attachments<span class="pl-ko">:</span> [{
-        filename<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>image.png<span class="pl-pds">'</span></span>,
-        path<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>/path/to/file<span class="pl-pds">'</span></span>,
-        cid<span class="pl-ko">:</span> <span class="pl-s1"><span class="pl-pds">'</span>unique@kreata.ee<span class="pl-pds">'</span></span> <span class="pl-c"><span class="pl-pdc">//</span>same cid value as in the html img src</span>
+    html<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Embedded image: &lt;img src="cid:unique@kreata.ee"/&gt;<span class="pl-pds">'</span></span>,
+    attachments<span class="pl-k">:</span> [{
+        filename<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>image.png<span class="pl-pds">'</span></span>,
+        path<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/file<span class="pl-pds">'</span></span>,
+        cid<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>unique@kreata.ee<span class="pl-pds">'</span></span> <span class="pl-c">//same cid value as in the html img src</span>
     }]
 }</pre></div>
 
@@ -611,13 +584,13 @@ compatible content objects to Strings or Buffers.</p>
 
 <p><strong>Example</strong></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">function</span> <span class="pl-enf">plugin</span>(<span class="pl-vpf">mail</span>, <span class="pl-vpf">callback</span>){
-    <span class="pl-c"><span class="pl-pdc">//</span> if mail.data.html is a file or an url, it is returned as a Buffer</span>
-    mail.resolveContent(mail.data, <span class="pl-s1"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>, <span class="pl-s">function</span>(<span class="pl-vpf">err</span>, <span class="pl-vpf">html</span>){
+<div class="highlight highlight-javascript"><pre><span class="pl-k">function</span> <span class="pl-en">plugin</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
+    <span class="pl-c">// if mail.data.html is a file or an url, it is returned as a Buffer</span>
+    mail.resolveContent(mail.<span class="pl-c1">data</span>, <span class="pl-s"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">html</span>){
         <span class="pl-k">if</span>(err){
             <span class="pl-k">return</span> callback(err);
         }
-        console<span class="pl-sf">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>HTML contents: %s<span class="pl-pds">'</span></span>, html.<span class="pl-sf">toString</span>());
+        <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>HTML contents: %s<span class="pl-pds">'</span></span>, html.<span class="pl-c1">toString</span>());
         callback();
     });
 };</pre></div>
@@ -633,9 +606,9 @@ compatible content objects to Strings or Buffers.</p>
 
 <p>The following plugin checks if <code>text</code> value is set and if not converts <code>html</code> value to <code>text</code> by removing all html tags.</p>
 
-<div class="highlight highlight-javascript"><pre>transporter.use(<span class="pl-s1"><span class="pl-pds">'</span>compile<span class="pl-pds">'</span></span>, <span class="pl-s">function</span>(<span class="pl-vpf">mail</span>, <span class="pl-vpf">callback</span>){
-    <span class="pl-k">if</span>(<span class="pl-ko">!</span>mail.text <span class="pl-ko">&amp;&amp;</span> mail.html){
-        mail.text <span class="pl-ko">=</span> mail.html.<span class="pl-sf">replace</span>(<span class="pl-sr"><span class="pl-pds">/</span>&lt;<span class="pl-c1">[<span class="pl-ko">^</span>&gt;]</span><span class="pl-ko">*</span>&gt;<span class="pl-pds">/</span>g</span>, <span class="pl-s1"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>);
+<div class="highlight highlight-javascript"><pre>transporter.use(<span class="pl-s"><span class="pl-pds">'</span>compile<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
+    <span class="pl-k">if</span>(<span class="pl-k">!</span>mail.<span class="pl-c1">text</span> <span class="pl-k">&amp;&amp;</span> mail.html){
+        mail.<span class="pl-c1">text</span> <span class="pl-k">=</span> mail.html.<span class="pl-c1">replace</span>(<span class="pl-sr"><span class="pl-pds">/</span>&lt;<span class="pl-c1">[<span class="pl-k">^</span>&gt;]</span><span class="pl-k">*</span>&gt;<span class="pl-pds">/</span>g</span>, <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>);
     }
     callback();
 });</pre></div>
@@ -655,20 +628,20 @@ compatible content objects to Strings or Buffers.</p>
 
 <p>The following plugin replaces all tabs with spaces in the raw message.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> transformer <span class="pl-ko">=</span> <span class="pl-ko">new</span> (<span class="pl-sf">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>).Transform)();
-<span class="pl-sc">transformer</span>.<span class="pl-enf">_transform</span> <span class="pl-ko">=</span> <span class="pl-s">function</span>(<span class="pl-vpf">chunk</span>, <span class="pl-vpf">encoding</span>, <span class="pl-vpf">done</span>) {
-    <span class="pl-c"><span class="pl-pdc">//</span> replace all tabs with spaces in the stream chunk</span>
-    <span class="pl-k">for</span>(<span class="pl-s">var</span> i <span class="pl-ko">=</span> <span class="pl-cn">0</span>; i <span class="pl-ko">&lt;</span> chunk.length; i<span class="pl-ko">++</span>){
-        <span class="pl-k">if</span>(chunk[i] <span class="pl-ko">===</span> <span class="pl-cn">0x09</span>){
-            chunk[i] <span class="pl-ko">=</span> <span class="pl-cn">0x20</span>;
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> transformer <span class="pl-k">=</span> <span class="pl-k">new</span> (<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>).Transform)();
+<span class="pl-c1">transformer</span>.<span class="pl-en">_transform</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">chunk</span>, <span class="pl-smi">encoding</span>, <span class="pl-smi">done</span>) {
+    <span class="pl-c">// replace all tabs with spaces in the stream chunk</span>
+    <span class="pl-k">for</span>(<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> chunk.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>){
+        <span class="pl-k">if</span>(chunk[i] <span class="pl-k">===</span> <span class="pl-c1">0x09</span>){
+            chunk[i] <span class="pl-k">=</span> <span class="pl-c1">0x20</span>;
         }
     }
-    <span class="pl-v">this</span>.<span class="pl-sf">push</span>(chunk);
+    <span class="pl-v">this</span>.<span class="pl-c1">push</span>(chunk);
     done();
 };
 
-transporter.use(<span class="pl-s1"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>, <span class="pl-s">function</span>(<span class="pl-vpf">mail</span>, <span class="pl-vpf">callback</span>){
-    <span class="pl-c"><span class="pl-pdc">//</span> apply output transformer to the raw message stream</span>
+transporter.use(<span class="pl-s"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
+    <span class="pl-c">// apply output transformer to the raw message stream</span>
     mail.message.transform(transformer);
     callback();
 });</pre></div>
@@ -681,12 +654,12 @@ transporter.use(<span class="pl-s1"><span class="pl-pds">'</span>stream<span cla
 
 <p>The following plugin prints address information to console.</p>
 
-<div class="highlight highlight-javascript"><pre>transporter.use(<span class="pl-s1"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>, <span class="pl-s">function</span>(<span class="pl-vpf">mail</span>, <span class="pl-vpf">callback</span>){
-    <span class="pl-s">var</span> addresses <span class="pl-ko">=</span> mail.message.getAddresses();
-    console<span class="pl-sf">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>From: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.from));
-    console<span class="pl-sf">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>To: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.to));
-    console<span class="pl-sf">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>Cc: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.cc));
-    console<span class="pl-sf">.log</span>(<span class="pl-s1"><span class="pl-pds">'</span>Bcc: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.bcc));
+<div class="highlight highlight-javascript"><pre>transporter.use(<span class="pl-s"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
+    <span class="pl-k">var</span> addresses <span class="pl-k">=</span> mail.message.getAddresses();
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>From: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.from));
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>To: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.to));
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Cc: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.cc));
+    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Bcc: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.bcc));
     callback();
 });</pre></div>
 
@@ -699,13 +672,13 @@ transporter.use(<span class="pl-s1"><span class="pl-pds">'</span>stream<span cla
 
 <p>This is the name of the transport object. For example 'SMTP' or 'SES' etc.</p>
 
-<div class="highlight highlight-javascript"><pre>transport.name <span class="pl-ko">=</span> <span class="pl-sf">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>package.json<span class="pl-pds">'</span></span>).name;</pre></div>
+<div class="highlight highlight-javascript"><pre>transport.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>package.json<span class="pl-pds">'</span></span>).<span class="pl-c1">name</span>;</pre></div>
 
 <p><strong><code>transport.version</code></strong></p>
 
 <p>This should be the transport module version. For example '0.1.0'.</p>
 
-<div class="highlight highlight-javascript"><pre>transport.version <span class="pl-ko">=</span> <span class="pl-sf">require</span>(<span class="pl-s1"><span class="pl-pds">'</span>package.json<span class="pl-pds">'</span></span>).version;</pre></div>
+<div class="highlight highlight-javascript"><pre>transport.<span class="pl-c1">version</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>package.json<span class="pl-pds">'</span></span>).<span class="pl-c1">version</span>;</pre></div>
 
 <p><strong><code>transport.send(mail, callback)</code></strong></p>
 
@@ -715,13 +688,13 @@ transporter.use(<span class="pl-s1"><span class="pl-pds">'</span>stream<span cla
 
 <p>The following example pipes the raw stream to the console.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-sc">transport</span>.<span class="pl-enf">send</span> <span class="pl-ko">=</span> <span class="pl-s">function</span>(<span class="pl-vpf">mail</span>, <span class="pl-vpf">callback</span>){
-    <span class="pl-s">var</span> input <span class="pl-ko">=</span> mail.message.createReadStream();
-    <span class="pl-s">var</span> messageId <span class="pl-ko">=</span> (mail.message.getHeader(<span class="pl-s1"><span class="pl-pds">'</span>message-id<span class="pl-pds">'</span></span>) <span class="pl-ko">||</span> <span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>).<span class="pl-sf">replace</span>(<span class="pl-sr"><span class="pl-pds">/</span><span class="pl-c1">[&lt;&gt;<span class="pl-c1">\s</span>]</span><span class="pl-pds">/</span>g</span>, <span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>);
-    input.pipe(process.stdout);
-    input.on(<span class="pl-s1"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-s">function</span>() {
+<div class="highlight highlight-javascript"><pre><span class="pl-c1">transport</span>.<span class="pl-en">send</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
+    <span class="pl-k">var</span> input <span class="pl-k">=</span> mail.message.createReadStream();
+    <span class="pl-k">var</span> messageId <span class="pl-k">=</span> (mail.message.getHeader(<span class="pl-s"><span class="pl-pds">'</span>message-id<span class="pl-pds">'</span></span>) <span class="pl-k">||</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>).<span class="pl-c1">replace</span>(<span class="pl-sr"><span class="pl-pds">/</span><span class="pl-c1">[&lt;&gt;<span class="pl-c1">\s</span>]</span><span class="pl-pds">/</span>g</span>, <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>);
+    input.pipe(<span class="pl-c1">process</span>.stdout);
+    input.on(<span class="pl-s"><span class="pl-pds">'</span>end<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>() {
         callback(<span class="pl-c1">null</span>, {
-            messageId<span class="pl-ko">:</span> messageId
+            messageId<span class="pl-k">:</span> messageId
         });
     });
 };</pre></div>
@@ -780,14 +753,16 @@ transporter.sendMail({mail data});
 <hr>
 
 <p>The Nodemailer logo was designed by <a href="https://www.behance.net/kristjansen">Sven Kristjansen</a>.</p>
-      </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/andris9">andris9</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/andris9/Nodemailer">Nodemailer</a> is maintained by <a href="https://github.com/andris9">andris9</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-              <script type="text/javascript">
+
+    </section>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -800,3 +775,4 @@ transporter.sendMail({mail data});
 
   </body>
 </html>
+

@@ -1,25 +1,44 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Nodemailer by andris9</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Nodemailer</h1>
-      <h2 class="project-tagline">Send e-mails with Node.JS – easy as cake! E-mail made in Estonia</h2>
-      <a href="https://github.com/andris9/Nodemailer" class="btn">View on GitHub</a>
-      <a href="https://github.com/andris9/Nodemailer/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/andris9/Nodemailer/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/andris9/Nodemailer">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/andris9/Nodemailer/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/andris9/Nodemailer/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <section class="main-content">
-      <p><img src="https://raw.githubusercontent.com/andris9/Nodemailer/master/assets/nm_logo_200x136.png" alt="Nodemailer"></p>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Nodemailer</h1>
+          <p>Send e-mails with Node.JS – easy as cake! E-mail made in Estonia</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/andris9">andris9</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <p><img src="https://raw.githubusercontent.com/andris9/Nodemailer/master/assets/nm_logo_200x136.png" alt="Nodemailer"></p>
 
 <p>Send e-mails from Node.js – easy as cake!</p>
 
@@ -27,27 +46,9 @@
 <a href="http://travis-ci.org/andris9/Nodemailer"><img src="https://secure.travis-ci.org/andris9/Nodemailer.svg" alt="Build Status"></a>
 <a href="http://badge.fury.io/js/nodemailer"><img src="https://badge.fury.io/js/nodemailer.svg" alt="NPM version" height="18"></a></p>
 
-<h2>
-<a id="upgrade-warning" class="anchor" href="#upgrade-warning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrade warning</h2>
-
-<p>Do not upgrade Nodemailer from 0.7 or lower to 1.0 as there are breaking changes. You can continue to use the 0.7 branch as long as you like. See the documentation for 0.7 <a href="https://github.com/andris9/Nodemailer/blob/0.7/README.md">here</a>.</p>
-
-<h3>
-<a id="migration-guide" class="anchor" href="#migration-guide" aria-hidden="true"><span class="octicon octicon-link"></span></a>Migration guide</h3>
-
-<p>See the migration guide from 0.7 to 1.0 <a href="http://www.andrisreinman.com/nodemailer-v1-0/#migrationguide">in the 1.0 release blog post</a>.</p>
-
-<div style="margin:0 auto">
-        <script type="text/javascript"><!--
-        google_ad_client = "pub-7677294784429110";
-        /* 728x90, created 11/8/10 */
-        google_ad_slot = "3636140900";
-        google_ad_width = 728;
-        google_ad_height = 90;
-        //-->
-        </script>
-        <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-    </div>
+<blockquote>
+<p><strong>Notice for v0.x users</strong> – Do not upgrade Nodemailer from 0.7 or lower. You can continue to use the 0.7 branch as long as you like. See the documentation for 0.7 <a href="https://github.com/andris9/Nodemailer/blob/0.7/README.md">here</a>.</p>
+</blockquote>
 
 <h2>
 <a id="notes-and-information" class="anchor" href="#notes-and-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes and information</h2>
@@ -80,12 +81,17 @@
 
 <p>If you want to support with Bitcoins, then my wallet address is <code>15Z8ADxhssKUiwP3jbbqJwA21744KMCfTM</code></p>
 
+<div>
+        
+        
+    </div>
+
 <h2>
 <a id="tldr-usage-example" class="anchor" href="#tldr-usage-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>TL;DR Usage Example</h2>
 
 <p>This is a complete example to send an e-mail with plaintext and HTML body</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
 
 <span class="pl-c">// create reusable transporter object using SMTP transport</span>
 <span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport({
@@ -111,10 +117,10 @@
 <span class="pl-c">// send mail with defined transport object</span>
 transporter.sendMail(mailOptions, <span class="pl-k">function</span>(<span class="pl-smi">error</span>, <span class="pl-smi">info</span>){
     <span class="pl-k">if</span>(error){
-        <span class="pl-en">console</span><span class="pl-c1">.log</span>(error);
-    }<span class="pl-k">else</span>{
-        <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Message sent: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> info.response);
+        <span class="pl-k">return</span> <span class="pl-en">console</span>.<span class="pl-c1">log</span>(error);
     }
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Message sent: <span class="pl-pds">'</span></span> <span class="pl-k">+</span> info.response);
+
 });</pre></div>
 
 <p>See <a href="https://github.com/andris9/nodemailer-smtp-transport#usage">nodemailer-smtp-transport</a> for SMTP configuration options and <a href="https://github.com/andris9/nodemailer-wellknown#supported-services">nodemailer-wellknown</a> for preconfigured service names (example uses 'gmail').</p>
@@ -133,7 +139,7 @@ transporter.sendMail(mailOptions, <span class="pl-k">function</span>(<span class
 
 <p>To send e-mails you need a transporter object</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport(transport)</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport(transport)</pre></div>
 
 <p>Where</p>
 
@@ -156,7 +162,7 @@ transporter.sendMail(mailOptions, <span class="pl-k">function</span>(<span class
 
 <p>In this case all e-mails are sent directly to the recipients MX server (using port 25)</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
 <span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport();
 transporter.sendMail({
     from<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>sender@address<span class="pl-pds">'</span></span>,
@@ -174,7 +180,7 @@ transporter.sendMail({
 
 <p>See SMTP <a href="https://github.com/andris9/nodemailer-smtp-transport#usage">configuration options here</a></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
 <span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport({
     service<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>gmail<span class="pl-pds">'</span></span>,
     auth<span class="pl-k">:</span> {
@@ -190,7 +196,7 @@ transporter.sendMail({
 });</pre></div>
 
 <blockquote>
-<p>Default SMTP transport is not suitable for large volume of e-mails new SMTP connection is established for every mail sent. Use <a href="https://github.com/andris9/nodemailer-smtp-pool">nodemailer-smtp-pool</a> if you need to send a large amout of e-mails.</p>
+<p>Default SMTP transport is not suitable for large volume of e-mails new SMTP connection is established for every mail sent. Use <a href="https://github.com/andris9/nodemailer-smtp-pool">nodemailer-smtp-pool</a> if you need to send a large amount of e-mails.</p>
 
 <p>For sending bulk mail using Nodemailer see the <a href="#delivering-bulk-mail">recommendations below</a></p>
 </blockquote>
@@ -202,7 +208,7 @@ transporter.sendMail({
 
 <p>The following example uses <a href="https://github.com/andris9/nodemailer-ses-transport">nodemailer-ses-transport</a> (Amazon SES).</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> nodemailer <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer<span class="pl-pds">'</span></span>);
 <span class="pl-k">var</span> ses <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>nodemailer-ses-transport<span class="pl-pds">'</span></span>);
 <span class="pl-k">var</span> transporter <span class="pl-k">=</span> nodemailer.createTransport(ses({
     accessKeyId<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>AWSACCESSKEY<span class="pl-pds">'</span></span>,
@@ -241,7 +247,13 @@ transporter.sendMail({
 <li>
 <strong><a href="https://github.com/andris9/nodemailer-pickup-transport">nodemailer-pickup-transport</a></strong> for storing messages to pickup folders</li>
 <li>
+<strong><a href="https://github.com/sparkpost/nodemailer-sparkpost-transport">nodemailer-sparkpost-transport</a></strong> for sending messages through SparkPost's Web API</li>
+<li>
 <strong><a href="https://github.com/sendgrid/nodemailer-sendgrid-transport">nodemailer-sendgrid-transport</a></strong> for sending messages through SendGrid's Web API</li>
+<li>
+<strong><a href="https://github.com/rebelmail/nodemailer-sailthru-transport">nodemailer-sailthru-transport</a></strong> for sending messages through Sailthru's Web API</li>
+<li>
+<strong><a href="https://github.com/rebelmail/nodemailer-mandrill-transport">nodemailer-mandrill-transport</a></strong> for sending messages through Mandrill's Web API</li>
 <li>
 <em>add yours</em> (see transport api documentation <a href="#transports">here</a>)</li>
 </ul>
@@ -257,7 +269,7 @@ transporter.sendMail({
 <li>
 <strong><a href="https://github.com/andris9/nodemailer-html-to-text">nodemailer-html-to-text</a></strong> to auto generate plaintext content from html</li>
 <li>
-<strong><a href="https://github.com/yads/nodemailer-express-handlebars">nodemailer-express-handlebars</a></strong> to auto generate html emails from handelbars/mustache templates</li>
+<strong><a href="https://github.com/yads/nodemailer-express-handlebars">nodemailer-express-handlebars</a></strong> to auto generate html emails from handlebars/mustache templates</li>
 <li>
 <strong><a href="https://github.com/mixmaxhq/nodemailer-plugin-inline-base64">nodemailer-plugin-inline-base64</a></strong> to convert base64 images to attachments</li>
 <li>
@@ -269,7 +281,7 @@ transporter.sendMail({
 
 <p>Once you have a transporter object you can send mail</p>
 
-<div class="highlight highlight-javascript"><pre>transporter.sendMail(data, callback)</pre></div>
+<div class="highlight highlight-source-js"><pre>transporter.sendMail(data, callback)</pre></div>
 
 <p>Where</p>
 
@@ -339,6 +351,10 @@ transporter.sendMail({
 <strong>html</strong> - The HTML version of the message as an Unicode string, Buffer, Stream or an object <em>{path: '...'}</em>
 </li>
 <li>
+<strong>watchHtml</strong> - Apple Watch specific HTML version of the message (<em>experimental</em>)</li>
+<li>
+<strong>priority</strong> - Sets message importance headers, either <code>'high'</code>, <code>'normal'</code> (default) or <code>'low'</code>.</li>
+<li>
 <strong>headers</strong> - An object or array of additional header fields (e.g. <em>{"X-Key-Name": "key value"}</em> or <em>[{key: "X-Key-Name", value: "val1"}, {key: "X-Key-Name", value: "val2"}]</em>)</li>
 <li>
 <strong>attachments</strong> - An array of attachment objects  (see <a href="#attachments">below</a> for details)</li>
@@ -370,7 +386,7 @@ Attachments are streamed as binary.</p>
 <li>
 <strong>content</strong> - String, Buffer or a Stream contents for the attachment</li>
 <li>
-<strong>encoding</strong> - If set and <code>content</code> is string, then encodes the content to a Buffer using the specified encoding. Example values: <code>base64</code>, <code>hex</code>, 'binary' etc. Useful if you want to use binary attachments in a JSON formatted e-mail object.</li>
+<strong>encoding</strong> - If set and <code>content</code> is string, then encodes the content to a Buffer using the specified encoding. Example values: <code>base64</code>, <code>hex</code>, <code>binary</code> etc. Useful if you want to use binary attachments in a JSON formatted e-mail object.</li>
 <li>
 <strong>path</strong> - path to a file or an URL (data uris are allowed as well) if you want to stream the file instead of including it (better for larger attachments)</li>
 <li>
@@ -379,9 +395,14 @@ Attachments are streamed as binary.</p>
 <strong>contentDisposition</strong> - optional content disposition type for the attachment, defaults to 'attachment'</li>
 </ul>
 
+<blockquote>
+<p><strong>Warning about stream errors</strong> –
+If an error occurs with an input stream, eg. an attachment from an URL fails to load, then message generation is not rejected. Instead, the error message gets written as the attachment contents.</p>
+</blockquote>
+
 <p>Attachments can be added as many as you want.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
     ...
     attachments<span class="pl-k">:</span> [
         {   <span class="pl-c">// utf-8 string as an attachment</span>
@@ -432,7 +453,7 @@ Attachments are streamed as binary.</p>
 
 <p><strong>Usage example:</strong></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
     ...
     html<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>&lt;b&gt;Hello world!&lt;/b&gt;<span class="pl-pds">'</span></span>,
     alternatives<span class="pl-k">:</span> [
@@ -495,7 +516,7 @@ if for some reason you want to specify it yourself, you can do it with <code>env
 <p><code>envelope</code> is an object with the following params: <code>from</code>, <code>to</code>, <code>cc</code> and <code>bcc</code> just like
 with regular mail options. You can also use the regular address format, unicode domains etc.</p>
 
-<div class="highlight highlight-javascript"><pre>mailOptions <span class="pl-k">=</span> {
+<div class="highlight highlight-source-js"><pre>mailOptions <span class="pl-k">=</span> {
     ...,
     from<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>mailer@kreata.ee<span class="pl-pds">'</span></span>,
     to<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>daemon@kreata.ee<span class="pl-pds">'</span></span>,
@@ -516,7 +537,7 @@ with regular mail options. You can also use the regular address format, unicode 
 
 <p><strong>NB!</strong> the cid value should be as unique as possible!</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> mailOptions <span class="pl-k">=</span> {
     ...
     html<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Embedded image: &lt;img src="cid:unique@kreata.ee"/&gt;<span class="pl-pds">'</span></span>,
     attachments<span class="pl-k">:</span> [{
@@ -545,7 +566,7 @@ with regular mail options. You can also use the regular address format, unicode 
 
 <p>'compile' and 'stream' plugins can be attached with <code>use(plugin)</code> method</p>
 
-<div class="highlight highlight-javascript"><pre>transporter.use(step, pluginFunc)</pre></div>
+<div class="highlight highlight-source-js"><pre>transporter.use(step, pluginFunc)</pre></div>
 
 <p>Where</p>
 
@@ -554,7 +575,7 @@ with regular mail options. You can also use the regular address format, unicode 
 <strong>transporter</strong> is a transport object created with <code>createTransport</code>
 </li>
 <li>
-<strong>step</strong> is a string, either 'compile' or 'stream' thatd defines when the plugin should be hooked</li>
+<strong>step</strong> is a string, either 'compile' or 'stream' that defines when the plugin should be hooked</li>
 <li>
 <strong>pluginFunc</strong> is a function that takes two arguments: the mail object and a callback function</li>
 </ul>
@@ -581,7 +602,7 @@ with regular mail options. You can also use the regular address format, unicode 
 <p>If your plugin needs to get the full value of a param, for example the String value for the <code>html</code> content, you can use <code>resolveContent()</code> to convert Nodemailer
 compatible content objects to Strings or Buffers.</p>
 
-<div class="highlight highlight-javascript"><pre>data.resolveContent(obj, key, callback)</pre></div>
+<div class="highlight highlight-source-js"><pre>data.resolveContent(obj, key, callback)</pre></div>
 
 <p>Where</p>
 
@@ -596,13 +617,13 @@ compatible content objects to Strings or Buffers.</p>
 
 <p><strong>Example</strong></p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">function</span> <span class="pl-en">plugin</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">plugin</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
     <span class="pl-c">// if mail.data.html is a file or an url, it is returned as a Buffer</span>
     mail.resolveContent(mail.<span class="pl-c1">data</span>, <span class="pl-s"><span class="pl-pds">'</span>html<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">err</span>, <span class="pl-smi">html</span>){
         <span class="pl-k">if</span>(err){
             <span class="pl-k">return</span> callback(err);
         }
-        <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>HTML contents: %s<span class="pl-pds">'</span></span>, html.<span class="pl-c1">toString</span>());
+        <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>HTML contents: %s<span class="pl-pds">'</span></span>, html.<span class="pl-c1">toString</span>());
         callback();
     });
 };</pre></div>
@@ -618,7 +639,7 @@ compatible content objects to Strings or Buffers.</p>
 
 <p>The following plugin checks if <code>text</code> value is set and if not converts <code>html</code> value to <code>text</code> by removing all html tags.</p>
 
-<div class="highlight highlight-javascript"><pre>transporter.use(<span class="pl-s"><span class="pl-pds">'</span>compile<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
+<div class="highlight highlight-source-js"><pre>transporter.use(<span class="pl-s"><span class="pl-pds">'</span>compile<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
     <span class="pl-k">if</span>(<span class="pl-k">!</span>mail.<span class="pl-c1">text</span> <span class="pl-k">&amp;&amp;</span> mail.html){
         mail.<span class="pl-c1">text</span> <span class="pl-k">=</span> mail.html.<span class="pl-c1">replace</span>(<span class="pl-sr"><span class="pl-pds">/</span>&lt;<span class="pl-c1">[<span class="pl-k">^</span>&gt;]</span><span class="pl-k">*</span>&gt;<span class="pl-pds">/</span>g</span>, <span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span>);
     }
@@ -640,7 +661,7 @@ compatible content objects to Strings or Buffers.</p>
 
 <p>The following plugin replaces all tabs with spaces in the raw message.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> transformer <span class="pl-k">=</span> <span class="pl-k">new</span> (<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>).Transform)();
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> transformer <span class="pl-k">=</span> <span class="pl-k">new</span> (<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>).Transform)();
 <span class="pl-c1">transformer</span>.<span class="pl-en">_transform</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">chunk</span>, <span class="pl-smi">encoding</span>, <span class="pl-smi">done</span>) {
     <span class="pl-c">// replace all tabs with spaces in the stream chunk</span>
     <span class="pl-k">for</span>(<span class="pl-k">var</span> i <span class="pl-k">=</span> <span class="pl-c1">0</span>; i <span class="pl-k">&lt;</span> chunk.<span class="pl-c1">length</span>; i<span class="pl-k">++</span>){
@@ -666,12 +687,12 @@ transporter.use(<span class="pl-s"><span class="pl-pds">'</span>stream<span clas
 
 <p>The following plugin prints address information to console.</p>
 
-<div class="highlight highlight-javascript"><pre>transporter.use(<span class="pl-s"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
+<div class="highlight highlight-source-js"><pre>transporter.use(<span class="pl-s"><span class="pl-pds">'</span>stream<span class="pl-pds">'</span></span>, <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
     <span class="pl-k">var</span> addresses <span class="pl-k">=</span> mail.message.getAddresses();
-    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>From: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.from));
-    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>To: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.to));
-    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Cc: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.cc));
-    <span class="pl-en">console</span><span class="pl-c1">.log</span>(<span class="pl-s"><span class="pl-pds">'</span>Bcc: %s<span class="pl-pds">'</span></span>, JSON.stringify(addresses.bcc));
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>From: %s<span class="pl-pds">'</span></span>, <span class="pl-c1">JSON</span>.stringify(addresses.from));
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>To: %s<span class="pl-pds">'</span></span>, <span class="pl-c1">JSON</span>.stringify(addresses.to));
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Cc: %s<span class="pl-pds">'</span></span>, <span class="pl-c1">JSON</span>.stringify(addresses.cc));
+    <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Bcc: %s<span class="pl-pds">'</span></span>, <span class="pl-c1">JSON</span>.stringify(addresses.bcc));
     callback();
 });</pre></div>
 
@@ -684,13 +705,13 @@ transporter.use(<span class="pl-s"><span class="pl-pds">'</span>stream<span clas
 
 <p>This is the name of the transport object. For example 'SMTP' or 'SES' etc.</p>
 
-<div class="highlight highlight-javascript"><pre>transport.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>package.json<span class="pl-pds">'</span></span>).<span class="pl-c1">name</span>;</pre></div>
+<div class="highlight highlight-source-js"><pre>transport.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>package.json<span class="pl-pds">'</span></span>).<span class="pl-c1">name</span>;</pre></div>
 
 <p><strong><code>transport.version</code></strong></p>
 
 <p>This should be the transport module version. For example '0.1.0'.</p>
 
-<div class="highlight highlight-javascript"><pre>transport.<span class="pl-c1">version</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>package.json<span class="pl-pds">'</span></span>).<span class="pl-c1">version</span>;</pre></div>
+<div class="highlight highlight-source-js"><pre>transport.<span class="pl-c1">version</span> <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>package.json<span class="pl-pds">'</span></span>).<span class="pl-c1">version</span>;</pre></div>
 
 <p><strong><code>transport.send(mail, callback)</code></strong></p>
 
@@ -700,7 +721,7 @@ transporter.use(<span class="pl-s"><span class="pl-pds">'</span>stream<span clas
 
 <p>The following example pipes the raw stream to the console.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="pl-c1">transport</span>.<span class="pl-en">send</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">transport</span>.<span class="pl-en">send</span> <span class="pl-k">=</span> <span class="pl-k">function</span>(<span class="pl-smi">mail</span>, <span class="pl-smi">callback</span>){
     <span class="pl-k">var</span> input <span class="pl-k">=</span> mail.message.createReadStream();
     <span class="pl-k">var</span> messageId <span class="pl-k">=</span> (mail.message.getHeader(<span class="pl-s"><span class="pl-pds">'</span>message-id<span class="pl-pds">'</span></span>) <span class="pl-k">||</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>).<span class="pl-c1">replace</span>(<span class="pl-sr"><span class="pl-pds">/</span><span class="pl-c1">[&lt;&gt;<span class="pl-c1">\s</span>]</span><span class="pl-pds">/</span>g</span>, <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>);
     input.pipe(<span class="pl-c1">process</span>.stdout);
@@ -732,9 +753,9 @@ transporter.sendMail({mail data});
 
 <p>Even though Gmail is the fastest way to get started with sending emails, it is by no means a preferable solution unless you are using OAuth2 authentication. Gmail expects the user to be an actual user not a robot so it runs a lot of heuristics for every login attempt and blocks anything that looks suspicious to defend the user from account hijacking attempts. For example you might run into trouble if your server is in another geographical location – everything works in your dev machine but messages are blocked in production.</p>
 
-<p>Additionally Gmail has came up with the concept of <a href="https://support.google.com/accounts/answer/6010255?hl=en">'less secure'</a> apps which is basically anyone who uses plain password to login to Gmail, so you might end up in a situation where one username can send (support for 'less secure' apps is enabled) but other is blocked (support for 'less secure' apps is disabled).</p>
+<p>Additionally Gmail has came up with the concept of <a href="https://support.google.com/accounts/answer/6010255?hl=en">'less secure'</a> apps which is basically anyone who uses plain password to login to Gmail, so you might end up in a situation where one username can send (support for 'less secure' apps is enabled) but other is blocked (support for 'less secure' apps is disabled). When using this method make sure to enable the required functionality by completing the "<a href="https://accounts.google.com/b/0/displayunlockcaptcha">captcha enable</a>". Without this, less secure connections won't work.</p>
 
-<p>To prevent having login issues you should either use XOAUTH2 (see details <a href="https://github.com/andris9/nodemailer-smtp-transport#authentication">here</a>) or use another provider and preferably a dedicated one like <a href="http://www.mailgun.com/">Mailgun</a> or <a href="http://mbsy.co/sendgrid/12237825">SendGrid</a> or any other. Usually these providers have free plans available that are compareable to the daily sending limits of Gmail. Gmail has a limit of 500 recipients a day (a message with one <em>To</em> and one <em>Cc</em> address counts as two messages since it has two recipients) for @gmail.com addresses and 2000 for Google Apps customers, larger SMTP providers usually offer about 200-300 recipients a day for free.</p>
+<p>To prevent having login issues you should either use XOAUTH2 (see details <a href="https://github.com/andris9/nodemailer-smtp-transport#authentication">here</a>) or use another provider and preferably a dedicated one like <a href="http://www.mailgun.com/">Mailgun</a> or <a href="http://mbsy.co/sendgrid/12237825">SendGrid</a> or any other. Usually these providers have free plans available that are comparable to the daily sending limits of Gmail. Gmail has a limit of 500 recipients a day (a message with one <em>To</em> and one <em>Cc</em> address counts as two messages since it has two recipients) for @gmail.com addresses and 2000 for Google Apps customers, larger SMTP providers usually offer about 200-300 recipients a day for free.</p>
 
 <h2>
 <a id="delivering-bulk-mail" class="anchor" href="#delivering-bulk-mail" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delivering Bulk Mail</h2>
@@ -743,7 +764,7 @@ transporter.sendMail({mail data});
 
 <ol>
 <li>
-<strong>Use a dedicated SMTP provider</strong> like <a href="http://mbsy.co/sendgrid/12237825">SendGrid</a> or <a href="http://www.mailgun.com/">Mailgun</a> or any other. Do not use services that offer SMTP as a sideline or for free (thats Gmail or the SMTP of your homepage hosting company) to send bulk mail – you'll hit all the hard limits immediatelly or get labelled as spam. Basically you get what you pay for and if you pay zero then your deliverability is near zero as well. E-mail might seem free but it is only free to a certain amount and that amount certainly does not include 10 million e-mails in a short period of time.</li>
+<strong>Use a dedicated SMTP provider</strong> like <a href="http://mbsy.co/sendgrid/12237825">SendGrid</a> or <a href="http://www.mailgun.com/">Mailgun</a> or any other. Do not use services that offer SMTP as a sideline or for free (that's Gmail or the SMTP of your homepage hosting company) to send bulk mail – you'll hit all the hard limits immediatelly or get labelled as spam. Basically you get what you pay for and if you pay zero then your deliverability is near zero as well. E-mail might seem free but it is only free to a certain amount and that amount certainly does not include 10 million e-mails in a short period of time.</li>
 <li>
 <strong>Use a dedicated queue manager,</strong> for example <a href="http://www.rabbitmq.com/">RabbitMQ</a> for queueing the e-mails. Nodemailer creates a callback function with related scopes etc. for every message so it might be hard on memory if you pile up the data for 10 million messages at once. Better to take the data from a queue when there's a free spot in the connection pool (previously sent message returns its callback).</li>
 <li>
@@ -765,16 +786,11 @@ transporter.sendMail({mail data});
 <hr>
 
 <p>The Nodemailer logo was designed by <a href="https://www.behance.net/kristjansen">Sven Kristjansen</a>.</p>
+      </section>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/andris9/Nodemailer">Nodemailer</a> is maintained by <a href="https://github.com/andris9">andris9</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-            <script type="text/javascript">
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -787,4 +803,3 @@ transporter.sendMail({mail data});
 
   </body>
 </html>
-

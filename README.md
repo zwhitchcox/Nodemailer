@@ -66,6 +66,8 @@ transporter.sendMail(mailOptions, function(error, info){
 });
 ```
 
+Your might need to "Allow access to your Google account". Login to your gmail using browser, and then go to this link https://accounts.google.com/DisplayUnlockCaptcha to unlock it. You might need to use the same browser you just logged in so google knows which account you want to grant access. After clicking "Allow" button, you should see the message: "Account access enabled. Please try signing in to your Google account again from your new device or application."
+
 See [nodemailer-smtp-transport](https://github.com/andris9/nodemailer-smtp-transport#usage) for SMTP configuration options and [nodemailer-wellknown](https://github.com/andris9/nodemailer-wellknown#supported-services) for preconfigured service names (example uses 'gmail').
 
 > When using default SMTP transport, then you do not need to define transport type explicitly (even though you can), just provide the SMTP options and that's it. For anything else, see the docs of the particular [transport mechanism](#available-transports).
